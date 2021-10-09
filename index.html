@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+  <title>Конвертер на JavaScript</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<h1>Конвертер Величин</h1>
+	<form>
+		<input type="number" id="kmInput" placeholder="Введите километры..">
+	</form>
+
+	<div id="output"> 
+		<h4>Метры:</h4>
+		<div id="mOutput"></div>
+		
+		<h4>Сантиметры:</h4>
+		<div id="smOutput"></div>
+		
+		<h4>Миллиметры:</h4>
+		<div id="mmOutput"></div>
+	</div>
+     
+  <script>
+    document.getElementById('output').style.visibility = 'hidden';
+    document.getElementById('kmInput').addEventListener('input', function(e) {
+      document.getElementById('output').style.visibility = 'visible';
+      let km = e.target.value;
+      document.getElementById('mOutput').innerHTML = km * 1000;
+      document.getElementById('smOutput').innerHTML = km * 100000;
+      document.getElementById('mmOutput').innerHTML = km * 1000000;
+    });
+  </script>
+</body>
+</html>
